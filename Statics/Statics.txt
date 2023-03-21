@@ -1,6 +1,6 @@
-Menu("       CALCULATIONS       ","DOT PRODUCT",1,"CROSS PRODUCT",2,"COEFF. MATRIX",3,"FORCE VECTOR (3D)",4,"EXIT",5
+Menu("       CALCULATIONS       ","DOT PRODUCT",1,"CROSS PRODUCT",2,"COEFF. MATRIX",3,"FORCE VECTOR (3D)",4,"RESULTANTS (3D)",5,"EXIT",X
 
-Lbl 5
+Lbl X
 ClrHome
 Stop
 
@@ -19,7 +19,7 @@ sum(L₁*L₂)→V
 ClrList L₁,L₂
 Disp "","DP(V)="+toString(round(V,2)
 Pause V
-Goto 5
+Goto X
 
 Lbl 12
 ClrHome
@@ -30,9 +30,9 @@ sum(L₁*L₂)→F
 F*L₂→L₁
 ClrList L₂
 Disp "","sProj(F): "+toString(F)
-Disp "","vProj(L₁): "+toString(round(L₁,0)
+Disp "","vProj(L₁): "+toString(round(L₁,2)
 Pause L₁
-Goto 5
+Goto X
 
 Lbl 2
 ClrHome
@@ -45,9 +45,9 @@ L₂(1)*L₃(2)-L₂(2)*L₃(1)→C
 {A,B,C→L₂
 ClrList L₃
 DelVar ADelVar BDelVar C
-Disp "","CP(L₂)="+toString(round(L₂,0)
+Disp "","CP(L₂)="+toString(round(L₂,2)
 Pause L₂
-Goto 5
+Goto X
 
 Lbl 3
 Input "EQs, 2/3?",N
@@ -66,9 +66,9 @@ L₃(2)→N
 Matrlist([A],N,L₃
 ClrList L₄,L₅
 DelVar NDelVar [A]
-Disp "","Soln(L₃): "+toString(round(L₃,0)
+Disp "","Soln(L₃): "+toString(round(L₃,2)
 Pause L₃
-Goto 5
+Goto X
 End
 
 If N=3
@@ -87,9 +87,9 @@ L₃(2)→N
 Matrlist([A],N,L₃
 ClrList L₄,L₅
 DelVar NDelVar [A]
-Disp "","Soln(L₃): "+toString(round(L₃,0)
+Disp "","Soln(L₃): "+toString(round(L₃,2)
 Pause L₃
-Goto 5
+Goto X
 End
 
 Lbl 4
@@ -99,6 +99,19 @@ Input "|F|=",F
 Input "n=",L₄
 L₄*(F/√(L₄(1)²+L₄(2)²+L₄(3)²))→L₄
 DelVar F
-Disp "","Fv(L₄): "+toString(round(L₄,0)
+Disp "","Fv(L₄): "+toString(round(L₄,2)
 Pause L₄
-Goto 5
+Goto X
+
+Lbl 5
+ClrHome
+Disp "R={(a)i,(b+c)j,(d+e+f)k}"
+Input "R=",⌊R
+√(⌊R(1)²+⌊R(2)²+⌊R(3)²)→R
+{cos(⌊R(1)/R),cos(⌊R(2)/R),cos(⌊R(3)/R)}→⌊ANG
+Disp "","Res(⌊R): "+toString(round(⌊R,2)
+Pause ⌊R
+Disp "|R|: "+toString(round(R,2)
+Disp "{θx,θy,θz}: "+toString(round(⌊ANG,0)
+Pause ⌊ANG
+Goto X
