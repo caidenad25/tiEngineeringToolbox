@@ -1,39 +1,104 @@
-Menu("      CALCULATIONS      ","DOT PRODUCT",1,"CROSS PRODUCT",2,"C.MATRIX (2 EQS)",3,"EXIT",4
+Menu("       CALCULATIONS       ","DOT PRODUCT",1,"CROSS PRODUCT",2,"COEFF. MATRIX",3,"FORCE VECTOR (3D)",4,"EXIT",5
 
-Lbl 4
+Lbl 5
+ClrHome
 Stop
 
 Lbl 1
+Menu(" DOT PRODUCT CALCULATIONS ","STANDARD",11,"PROJECTION",12,"EXIT",13
+
+Lbl 13
+Goto 5
+
+Lbl 11
 ClrHome
 Disp "Enter {A,B,C}•{D,E,F}
 Input "V₁=",L₁
 Input "V₂=",L₂
 sum(L₁*L₂)→V
-Disp "","DP = "+toString(round(V,2))
-Return
+ClrList L₁,L₂
+Disp "","DP(V)="+toString(round(V,2)
+Pause V
+Goto 5
+
+Lbl 12
+ClrHome
+Disp "Enter {A,B,C}•{D,E,F}
+Input "F=",L₁
+Input "UV=",L₂
+sum(L₁*L₂)→F
+F*L₂→L₁
+ClrList L₂
+Disp "","sProj(F): "+toString(F)
+Disp "","vProj(L₁): "+toString(round(L₁,0)
+Pause L₁
+Goto 5
 
 Lbl 2
 ClrHome
 Disp "Enter {A,B,C}x{D,E,F}
-Input "V₁=",L₁
-Input "V₂=",L₂
-L₁(2)*L₂(3)-L₁(3)*L₂(2)→A
-L₁(3)*L₂(1)-L₁(1)*L₂(3)→B
-L₁(1)*L₂(2)-L₁(2)*L₂(1)→C
-{A,B,C→L₃
-Disp "","CP = "+toString(round(L₃,2))
-Return
+Input "V₁=",L₂
+Input "V₂=",L₃
+L₂(2)*L₃(3)-L₂(3)*L₃(2)→A
+L₂(3)*L₃(1)-L₂(1)*L₃(3)→B
+L₂(1)*L₃(2)-L₂(2)*L₃(1)→C
+{A,B,C→L₂
+ClrList L₃
+DelVar ADelVar BDelVar C
+Disp "","CP(L₂)="+toString(round(L₂,0)
+Pause L₂
+Goto 5
 
 Lbl 3
+Input "EQs, 2/3?",N
+If N=2
+Then
 ClrHome
-Disp "Enter Coeff EQs as Lists
-Input "EQ1: ",L₁
-Input "EQ2: ",L₂
-Listmatr(L₁,L₂,[A]
-[A]→[A]
+Disp "Enter 2 Coefficient Columns
+Input "L1: ",L₃
+Input "L2: ",L₄
+Disp "Enter 1 Solution Column
+Input "Soln: ",L₅
+Listmatr(L₃,L₄,L₅,[A]
 rref([A])→[A]
-dim([A])→L₁
-L₁(2)→N
-Matrlist([A],N,L₁
-Disp "","Soln = "+toString(round(L₁,2))
-Return
+dim([A])→L₃
+L₃(2)→N
+Matrlist([A],N,L₃
+ClrList L₄,L₅
+DelVar NDelVar [A]
+Disp "","Soln(L₃): "+toString(round(L₃,0)
+Pause L₃
+Goto 5
+End
+
+If N=3
+Then
+ClrHome
+Disp "Enter 3 Coefficient Columns
+Input "L1: ",L₃
+Input "L2: ",L₄
+Input "L3: ",L₅
+Disp "Enter 1 Solution Column
+Input "Soln: ",L₆
+Listmatr(L₃,L₄,L₅,L₆,[A]
+rref([A])→[A]
+dim([A])→L₃
+L₃(2)→N
+Matrlist([A],N,L₃
+ClrList L₄,L₅
+DelVar NDelVar [A]
+Disp "","Soln(L₃): "+toString(round(L₃,0)
+Pause L₃
+Goto 5
+End
+
+Lbl 4
+ClrHome
+Disp "Magnitude F and n={a,b,c}"
+Input "|F|=",F
+Input "n=",L₄
+L₄*(F/√(L₄(1)²+L₄(2)²+L₄(3)²))→L₄
+DelVar F
+Disp "","Fv(L₄): "+toString(round(L₄,0)
+Pause L₄
+Goto 5
