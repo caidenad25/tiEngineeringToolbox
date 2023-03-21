@@ -1,0 +1,965 @@
+2→dim(⌊MAST
+If ⌊MAST(1)≠2345:Then
+ClrHome
+Output(4,5,"MASTER PROGRAM 3.6
+Output(6,9,"BY BRANDEN
+Pause ""
+{2345→MAST
+End
+
+Lbl N:ClrHome
+Menu("          PAGE 1          ","FACTOR POLYNOMIAL",1,"SYNTHETIC DIVISION",8,"QUADRATIC FORMULA",2,"INEQUALITY SOLVER",9,"TRIANGLE SOLVER        *",13,"VECTOR MATHS           *",5,"ANGLE CONVERTER        *",11,"NEXT PAGE",P,"EXIT",V
+
+Lbl P:ClrHome
+Menu("          PAGE 2          ","SLOPE EQUATION",3,"COMPLEX CONJUGATE",6,"MATT DA BEAST",U,"STANDARD FORMULAS      *",4,"GEOMETRY FORMULAS      *",7,"SERIES FORMULAS        *",10,"GARBAGE COLLECT",12,"PREVIOUS PAGE",N,"EXIT",V
+
+Lbl U
+"HI":0→G
+Repeat G=1
+Disp "MATT DA BEAST"
+End
+
+Lbl 12
+ClrHome
+Disp "CLEARING VARIABLES
+DelVar ADelVar BDelVar CDelVar DDelVar EDelVar FDelVar GDelVar HDelVar IDelVar JDelVar KDelVar LDelVar MDelVar NDelVar ODelVar PDelVar QDelVar RDelVar SDelVar TDelVar UDelVar VDelVar WDelVar XDelVar YDelVar ZDelVar θ
+Disp "CLEARING LISTS
+ClrList L₁,L₂,L₃,L₄,L₅,L₆
+Disp "CLEARING MATRICES
+DelVar [A]DelVar [B]DelVar [C]DelVar [D]DelVar [E]DelVar [F]DelVar [G]DelVar [H]DelVar [I]DelVar [J]
+Disp "CLEARING FUNCTIONS
+DelVar Y₁DelVar Y₂DelVar Y₃DelVar Y₄DelVar Y₅DelVar Y₆DelVar Y₇DelVar Y₈DelVar Y₉DelVar Y₀
+Disp "CLEARING STRINGS
+DelVar Str1DelVar Str2DelVar Str3DelVar Str4DelVar Str5DelVar Str6DelVar Str7DelVar Str8DelVar Str9DelVar Str0
+Disp "CLEARING ENTRIES
+Clear Entries
+Stop
+
+Lbl 1
+ClrHome
+
+Disp "ENTER EQUATION:
+Prompt Y₁
+Y₁(0)→P
+EquString(Y₁,Str1
+inString(Str1,"X→Q
+If Q>1:Then
+expr(sub(Str1,1,Q-1→Q
+Else
+1→Q
+End
+
+"FACTOR P AND Q
+{1,P→L₁:{1,Q→L₂
+
+For(I,2,12
+If P/I=int(P/I:Then
+0→T
+For(J,1,dim(L₁))
+If L₁(J)=I:Then
+1→T:dim(L₁→J
+End:End
+If T=0:Then
+I→L₁(dim(L₁)+1
+P/I→L₁(dim(L₁)+1
+End:End:End
+
+For(I,2,12
+If Q/I=int(Q/I:Then
+0→T
+For(J,1,dim(L₂))
+If L₂(J)=I:Then
+1→T:dim(L₂→J
+End:End
+If T=0:Then
+I→L₂(dim(L₂)+1
+Q/I→L₂(dim(L₂)+1
+End:End:End
+
+0→dim(L₃
+For(I,1,dim(L₁
+For(J,1,dim(L₂
+L₁(I)/L₂(J)→A
+
+0→T
+For(K,1,dim(L₃))
+If L₃(K)=A
+1→T
+End
+If 0=T
+A→L₃(dim(L₃)+1
+End
+End
+
+2*dim(L₃→dim(L₂
+Fill(7,L₂
+For(I,1,dim(L₃
+Y₁(L₃(I→L₂(I
+End
+For(I,1,dim(L₃
+Y₁(­L₃(I→L₂(I+dim(L₃
+End
+
+0→dim(L₁
+For(I,1,dim(L₂
+If L₂(I)=0:Then
+If I>dim(L₃:Then
+­L₃(I-dim(L₃→A
+Else
+L₃(I→A
+End
+
+0→T
+For(J,1,dim(L₁
+If A=L₁(J:Then
+1→T:dim(L₁→J
+End
+End
+If 0=T
+A→L₁(dim(L₁)+1
+
+End
+End
+
+" "→Str1:" X=→Str2
+For(I,1,dim(L₁
+L₁(I→A
+
+0→N:0→D
+If fPart(A)≠0:Then
+For(J,2,10)
+If AJ=int(AJ:Then
+AJ→N:J→D:10→J
+End
+End
+Str1+"("+toString(D)+"X→Str1
+N→A
+Else
+Str1+"(X→Str1
+End
+
+If A>0
+Str1+"-"+toString(A→Str1
+If A<0
+Str1+"+"+toString(abs(A→Str1
+Str1+")→Str1
+
+Str2+toString(round(L₁(I),3))+",→Str2
+End
+
+sub(Str2,1,length(Str2)-1→Str2
+If dim(L₁)=0:Then
+" NOT FACTORABLE→Str1
+" "→Str2
+End
+
+Disp "",Str1,"",Str2
+Stop
+
+
+Lbl 2
+ClrHome
+Disp "ENTER AS: ▫AX²+BX+C▫
+Prompt A,B,C
+""→Str1:"-"→Str2
+0→Q:0→N
+
+B²-(4*A*C)→E
+­B→D
+2*A→F
+
+
+E→R
+If E=0:Then
+0→U:0→V
+Else
+
+0→N:0→U:0→V
+If R<0
+1→N
+abs(R)→R
+
+For(I,12,2,­1
+If remainder(R,I²)=0:Then
+R/I²→V
+I→U
+1→I
+End
+End
+
+End
+abs(E)→E
+
+If 1=5:Then
+If U≠0:Then
+{D,U,F}→L₄
+min(L₄→Q
+
+gcd(abs(D),U→G
+If G=gcd(abs(D),abs(F):Then
+D/G→D
+U/G→U
+F/G→F
+End
+End
+
+End
+
+If E=0:Then
+toString(D→Str1
+Else
+toString(D)+"+"→Str1
+End
+
+If U=0 and E≠0
+Str1+"√("+toString(E)+")"→Str1
+If U≠0 and U≠1:Then
+Str1+toString(U→Str1
+If V≠0 and V≠1
+Str1+"√("+toString(V)+")"→Str1
+End
+
+If N=1
+Str1+"→Str1
+
+
+For(I,1,length(Str1)
+Str2+"-"→Str2
+End
+length(Str2)→L
+
+Disp ""
+Output(3,9,Str1
+Output(4,9,Str2
+Output(5,int(L/2)+9,F
+Stop
+
+
+Lbl 3
+ClrHome:0→M
+Disp "POINT ONE:
+Input L₁
+Disp "POINT TWO:
+Input L₂
+
+If dim(L₁)≠2 or dim(L₂)≠2:Then
+Disp "ERROR: INVALID SIZES
+Stop
+End
+
+L₂(2)-L₁(2)→S
+L₂(1)-L₁(1)→T
+L₁(2)-(S/T*L₁(1))→B
+If S/T=int(S/T
+S/T→M
+
+"Y="→Str1
+If M=0 and S≠0:Then
+If S>0 and T>0:Then
+abs(S→S:abs(T→T
+End
+Str1+toString(S)+"/"+toString(T)+"X→Str1
+Else
+If M=1:Then
+Str1+"X"→Str1
+Else
+Str1+toString(M)+"X"→Str1
+End
+End
+
+If B>0
+Str1+"+"+toString(B→Str1
+If B<0
+Str1+"-"+toString(abs(B→Str1
+
+Disp " ",Str1
+Stop
+
+
+Lbl 4
+ClrHome:" "→Str1:0→θ
+1→U:1→V
+
+Menu("     PICK AN EQUATION     ","QUADRATIC",21,"CIRCLE",22,"ELLIPSE",23,"HYPERBOLA",24,"PARABOLA",25,"GUIDES",26,"BACK",P,"EXIT",V
+
+
+Lbl 21
+Disp "ENTER AS ▫AX²+BX+C▫
+Prompt A,B,C
+­B/(2A→H
+A(H)²+B(H)+C→K
+(C-K)/((0-H)²)→A
+
+" Y="+toString(A)+"(X→Str1
+
+If H>0:Then
+Str1+"-"+toString(H→Str1:Else
+If H<0
+Str1+"+"+toString(abs(H→Str1
+End
+Str1+")²→Str1
+
+If K<0:Then
+Str1+"-"+toString(abs(K→Str1:Else
+If K>0
+Str1+"+"+toString(K→Str1
+End
+
+Disp "",Str1
+Stop
+
+
+Lbl 22
+Disp "ENTER AS ▫AX²+BX+AY²+CY=D▫
+Prompt A,B,C,D
+
+If A≠1:Then
+B/A→B:C/A→C:D/A→D:1→A
+End
+B/2→H:C/2→K
+D+H²+K²→R
+
+" (X"→Str1
+If H>0:Then
+Str1+"+"+toString(H→Str1
+Else
+If H<0
+Str1+"-"+toString(abs(H→Str1
+End
+
+Str1+")²+(Y"→Str1
+If K>0:Then
+Str1+"+"+toString(K→Str1
+Else
+If K<0
+Str1+"-"+toString(abs(K→Str1
+End
+
+Str1+")²="+toString(R→Str1
+Disp "",Str1
+Stop
+
+
+Lbl 24
+1→θ
+
+Lbl 23
+Disp "ENTER AS ▫AX²+BX+CY²+DY=E▫
+Prompt A,B,C,D,E
+
+If A≠1:Then
+B/A→B:A→V:abs(V→V
+End
+
+If C≠1:Then
+D/C→D:C→U:abs(U→U
+End
+
+E/U/V→R
+B/2→H:D/2→K
+If θ=0
+R+(H²/U)+(K²/V)→R
+If θ=1:Then
+If A<0 and C>0
+R-(H²/U)+(K²/V)→R
+If C<0 and A>0
+R+(H²/U)-(K²/V)→R
+End
+
+If θ=1 and A<0:Then
+H→T:K→H:T→K
+U→T:V→U:T→V
+End
+
+If A<0:Then
+" (Y"→Str1
+Else
+" (X"→Str1
+End
+
+5+length(eval(abs(H→L
+5+length(eval(abs(K→M
+If H>0:Then
+Str1+"+"+toString(H→Str1
+Else
+If H<0:Then
+Str1+"-"+toString(abs(H→Str1
+Else
+4→L
+End
+End
+
+If A<0:Then
+Str1+")²   (X→Str1
+Else
+Str1+")²   (Y→Str1
+End
+
+If K>0:Then
+Str1+"+"+toString(K→Str1
+Else
+If K<0:Then
+Str1+"-"+toString(abs(K→Str1
+Else
+4→M
+End
+End
+
+Str1+")²→Str1
+
+" "→Str2
+For(I,1,L
+Str2+"-"→Str2
+End
+
+If θ=0
+Str2+" + "→Str2
+If θ=1
+Str2+" - "→Str2
+For(I,1,M
+Str2+"-"→Str2
+End
+Str2+" = "+toString(R→Str2
+
+"  "+toString(U→Str3
+L-length(eval(U))+3→N
+For(I,1,N
+Str3+" "→Str3
+End
+Str3+toString(V→Str3
+
+Disp "",Str1,Str2,Str3
+Stop
+
+
+Lbl 25
+ClrHome
+Disp "X² or Y²
+Input Str1
+ClrHome:"XY→Str2
+
+If Str1="X²":Then
+"XY→Str2
+Disp "ENTER AS ▫AX²+BX=CY+D▫
+End
+
+If Str1="Y²":Then
+"YX→Str2
+Disp "ENTER AS ▫AY²+BY=CX+D
+End
+
+If Str1≠"X²" and Str1≠"Y²":Then
+Disp "ERROR: INVALID INPUT
+Return
+End
+
+Prompt A,B,C,D
+If A≠1:Then
+B/A→B:C/A→C:D/A→D:1→A
+End
+
+B/2→H
+D+H²→D
+D/C→K
+
+" ("+sub(Str2,1,1→Str1
+If H>0
+Str1+"+"+toString(H→Str1
+If H<0
+Str1+"-"+toString(abs(H→Str1
+
+Str1+")²="+toString(C)+"("+sub(Str2,2,1→Str1
+round(K,2→K
+If K>0
+Str1+"+"+toString(K→Str1
+If K<0
+Str1+"-"+toString(abs(K→Str1
+
+Str1+")"→Str1
+Disp "",Str1
+Stop
+
+Lbl 26
+ClrHome
+Output(1,9,"-PARABOLA-
+Output(2,8,"Y=A(X-H)²+K
+Output(3,12," or 
+Output(4,7,"(X-H)²=4P(Y-K)
+Output(5,12," or 
+Output(6,7,"(Y-K)²=4P(X-H)
+Output(8,10,"-CIRCLE-
+Output(9,6,"(X-H)²+(Y-K)²=R²
+
+Pause " 
+ClrHome
+Output(1,10,"-ELIPSE-
+Output(2,5,"(X-H)²   (Y-K)²
+Output(3,5,"------ + ------ = 1
+Output(4,5,"  A²       B²
+Output(6,12," or 
+Output(8,5,"(X-H)²   (Y-K)²
+Output(9,5,"------ + ------ = 1
+Output(10,5,"  B²       A²
+
+Pause " 
+ClrHome
+Output(1,8,"-HYPERBOLA-
+Output(2,5,"(X-H)²   (Y-K)²
+Output(3,5,"------ - ------ = 1
+Output(4,5,"  A²       B²
+Output(6,12," or 
+Output(8,5,"(Y-K)²   (X-H)²
+Output(9,5,"------ - ------ = 1
+Output(10,5,"  A²       B²
+Pause " "
+
+ClrHome
+Goto 4
+
+Lbl 5
+ClrHome
+Menu("       VECTOR MATHS       ","DISTANCE",31,"ADDITION",32,"MAGNITUDE",33,"MIDPOINT",34,"DOT PRODUCT",35,"CROSS PRODUCT",36,"BACK",N,"EXIT",V
+
+Lbl 31
+ClrHome
+ClrList L₄,L₅
+
+Disp "VECTOR ONE:
+Input L₄
+Disp "VECTOR TWO:
+Input L₅
+
+If dim(L₄)≠dim(L₅:Then
+Disp "ERROR: INVALID SIZES
+Stop
+End
+
+0→A
+For(I,1,dim(L₄
+(L₄(I)-L₅(I))²+A→A
+End
+
+Disp "","D=√("+toString(A)+")
+Stop
+
+Lbl 32
+Disp "VECTOR ONE:
+Input L₄
+Disp "VECTOR TWO:
+Input L₅
+If dim(L₄)≠dim(L₅):Then
+Disp "ERROR: INVALID SIZES
+Stop
+End
+
+dim(L₄→dim(L₁
+For(I,1,dim(L₄
+L₄(I)+L₅(I)→L₁(I
+End
+Disp "",toString(L₁
+Stop
+
+Lbl 33
+ClrHome
+Disp "ENTER VECTOR
+Input L₄
+
+0→A
+For(I,1,dim(L₄
+A+L₄(I)²→A
+End
+
+Disp "","M=√("+toString(A)+")
+Stop
+
+Lbl 34
+ClrHome
+Disp "VECTOR ONE:
+Input L₄
+Disp "VECTOR TWO:
+Input L₅
+
+If dim(L₄)≠dim(L₅):Then
+Disp "ERROR: INVALID SIZES
+Stop
+End
+
+dim(L₄→dim(L₁
+For(I,1,dim(L₄
+(L₄(I)+L₅(I))/2→L₁(I)
+End
+Disp "","MIDPOINT = "+toString(L₁
+Stop
+
+Lbl 35
+ClrHome
+Disp "VECTOR ONE:
+Input L₄
+Disp "VECTOR TWO:
+Input L₅
+If dim(L₄)≠dim(L₅):Then
+Disp "ERROR: INVALID SIZES
+Stop
+End
+
+0→A
+For(I,1,dim(L₄
+A+(L₄(I)*L₅(I→A
+End
+
+Disp "","DP="+toString(A
+Stop
+
+Lbl 36
+ClrHome
+Disp "VECTOR ONE (3D):
+Input L₄
+Disp "VECTOR TWO (3D):
+Input L₅
+
+If dim(L₄)≠3 or dim(L₅)≠3:Then
+Disp "ERROR: INVALID SIZES
+Stop
+End
+
+L₄(2)*L₅(3)-L₄(3)*L₅(2)→A
+L₄(3)*L₅(1)-L₄(1)*L₅(3)→B
+L₄(1)*L₅(2)-L₄(2)*L₅(1)→C
+{A,B,C→L₁
+
+Disp "","CP = "+toString(L₁
+Stop
+
+
+Lbl 6
+ClrHome
+
+Disp "ENTER NUMERATOR
+Input A
+Disp "ENTER DENOMINATOR
+Input B
+
+A*conj(B→A
+B*conj(B→B
+
+Disp "",toString(A),"-----",toString(B
+Stop
+
+
+Lbl 7
+ClrHome
+
+Menu("     GEOMETRY FORMULAS    ","RECTANGLE",51,"TRIANGLE",52,"CIRCLE",53,"RECTANGULAR SOLID",54,"SPHERE",55,"CYLINDER",56,"CONE",57,"BACK",P,"EXIT",M
+
+Lbl 51
+Prompt L,W
+Output(1,9,"A=L*W
+Output(3,9,"A="+toString(LW
+Goto M
+
+Lbl X
+Prompt R
+2/3*πR→A
+Output(1,9,"V=2/3πR
+Output(3,9,"V="+toString(A
+Goto M
+
+Lbl 52
+Prompt B,H
+Output(1,9,"A=1/2*B*H
+Output(3,9,"A="+toString(BH/2
+Goto M
+
+Lbl 53
+Prompt R
+Output(1,9,"A=πR²
+Output(4,9,"A="+toString(R^2π
+Output(2,9,"C=2πR
+Output(5,9,"C="+toString(2πR
+Goto M
+
+Lbl 54
+Prompt L,W,H
+Output(1,9,"V=L*W*H
+Output(2,9,"SA=2(LW+LH+WH)
+2(LH+LW+WH→A
+Output(4,9,"V="+toString(LWH
+Output(5,9,"SA="+toString(A
+Goto M
+
+Lbl 55
+Prompt R
+Output(1,9,"V=4/3πR
+Output(2,9,"SA=4πR²
+4/3*πR→A
+Output(4,9,"V="+toString(A
+Output(5,9,"SA="+toString(4πR^2
+Goto M
+
+Lbl 56
+Prompt R,H
+Output(1,9,"V=πR²H
+Output(2,9,"SA=2πRH
+Output(4,9,"V="+toString(HπR^2
+Output(5,9,"SA="+toString(2πRH
+Goto M
+
+Lbl 57
+Prompt R,H
+Output(1,9,"V=1/3πR²H
+Output(2,9,"SA=πR√(R²+H²)
+π(R^2)H/3→A
+Output(4,9,"V="+toString(A
+πR√(R^2+H²→A
+Output(5,9,"SA="+toString(A
+Goto M
+
+Lbl M
+Disp "","","",""
+Return
+
+
+Lbl 8
+ClrHome:0→dim(L₂
+Disp "ENTER COEFFICIENTS:
+Prompt L₁
+Disp "ENTER FACTOR:
+Prompt X
+dim(L₁)→dim(L₂
+0→Y
+
+For(I,1,dim(L₁))
+L₁(I)+Y→L₂(I
+L₂(I)*X→Y
+End
+
+" (→Str1
+dim(L₂)-1→L
+For(I,1,L
+L₂(I)→X
+
+If X≥0 and I≠1
+Str1+"+→Str1
+If X<0
+Str1+"-→Str1
+If abs(X)≠1 or L-I=0
+Str1+toString(abs(X→Str1
+
+If L-I>0:Then
+Str1+"X→Str1
+If L-I>1
+Str1+"^"+toString(L-I→Str1
+End
+End
+
+Str1+")  R="+toString(L₂(dim(L₂→Str1
+
+Disp "",Str1
+Stop
+
+
+Lbl 9
+ClrHome
+
+Disp "ENTER EQUATION:
+Prompt Y₁
+Disp "ENTER FACTORS:
+Prompt L₁
+SortA(L₁
+
+dim(L₁)+1→dim(L₂
+Y₁(L₁(1)-2→L₂(1)
+For(I,2,dim(L₁
+L₁(I)+L₁(I-1→X
+Y₁(X/2→L₂(I
+End
+Y₁(L₁(dim(L₁))+2→L₂(dim(L₂
+
+" (→Str1
+For(I,1,dim(L₂
+If L₂(I)>0
+Str1+"+ →Str1
+If L₂(I)<0
+Str1+"- →Str1
+If L₂(I)=0
+Str1+"0 →Str1
+End
+sub(Str1,1,length(Str1)-1)+")→Str1
+
+Disp "",Str1
+Stop
+
+Lbl 10
+ClrHome
+Menu("      SERIES FORMULAS     ","ARITHMETIC CALC",41,"ARITHMETIC SUM",42,"GEOMETRIC CALC",43,"GEOMETRIC SUM",44,"INFINITE SUM",45,"BACK",P,"EXIT",V
+
+Lbl 41
+Prompt A,D,N
+A+D(N-1→X
+Disp "","A(N)= "+toString(X
+Stop
+
+Lbl 42
+Prompt A,D,N
+(N/2)(2A+D*(N-1→X
+Disp "","Σ(N)= "+toString(X
+Stop
+
+Lbl 43
+Prompt A,R,N
+AR^(N-1→X
+Disp "","A(N)= "+toString(X
+Stop
+
+Lbl 44
+Prompt A,R,N
+(A(1-R^N)/(1-R)→X
+Disp "","Σ(N)= "+toString(X
+Stop
+
+Lbl 45
+Prompt A,R
+A/(1-R→X
+Disp "","Σ()= "+toString(X
+Stop
+
+
+Lbl 11
+ClrHome
+Menu("     ANGLE CONVERTER      ","DEGREE --> RADIAN",61,"RADIAN --> DEGREE",62,"CARTESIAN --> POLAR",63,"POLAR --> CARTESIAN",64,"GUIDE",65,"BACK",N,"EXIT",V
+
+Lbl 61
+Prompt θ
+gcd(abs(θ),180→B
+"R= "+toString(θ/B)+"π/"+toString(180/B→Str1
+Disp "",Str1
+Stop
+
+Lbl 62
+Prompt R
+round(180R/π,3→R
+Disp "","D= "+toString(R)+"°
+Stop
+
+Lbl 63
+Disp "ENTER AS (X,Y)
+Prompt L₁
+If dim(L₁)≠2:Then
+Disp "ERROR: INVALID SIZE
+Return:End
+
+2→dim(L₂
+RPr(L₁(1),L₁(2→L₂(1
+RPθ(L₁(1),L₁(2→L₂(2
+Disp "","PC= ("+toString(round(L₂(1),3))+","+toString(round(L₂(2),3))+")
+Stop
+
+Lbl 64
+Disp "ENTER AS (R,θ)
+Prompt L₁
+If dim(L₁)≠2:Then
+Disp "ERROR: INVALID SIZE
+Return:End
+
+2→dim(L₂
+PRx(L₁(1),L₁(2→L₂(1
+PRy(L₁(1),L₁(2→L₂(2
+Disp "","CC= ("+toString(round(L₂(1),2))+","+toString(round(L₂(2),2))+")
+Stop
+
+Lbl 65
+Disp " PUT CALC IN RADIAN MODE!
+Disp "         180°=π
+Disp ""," D=R(180/π)    R=D(π/180) 
+Disp "","(C) X=Rcos(θ)  Y=Rsin(θ)  
+Disp "","(P) R=√(X²+Y²) θ=tan(Y/X)
+Pause ""
+ClrHome
+Goto 11
+
+
+Lbl 13:ClrHome:Degree
+Menu("      TRIANGLE SOLVER      ","(AAS) ANGLE-ANGLE-SIDE",71,"(ASA) ANGLE-SIDE-ANGLE",72,"(SSA) SIDE-SIDE-ANGLE",73,"(SAS) SIDE-ANGLE-SIDE",74,"(SSS) SIDE-SIDE-SIDE",75,"(AAA) ANGLE-ANGLE-ANGLE",76,"GUIDES",77,"BACK",N,"EXIT",V
+
+Lbl 77
+Disp " sin(X)   sin(Y)   sin(Z)
+Disp " ------ = ------ = ------
+Disp "   A        B        C
+Disp "","    A²=B²+C²-2BCcos(X)","
+Disp "    B²=A²+C²-2ACcos(Y)","
+Pause "    C²=A²+B²-2ABcos(Z)
+ClrHome
+Goto 13
+
+
+Lbl 71
+Input "X°=",X
+Input "Y°=",Y
+Input "A=",A
+
+180-X-Y→Z
+Asin(Y)/sin(X→B
+Asin(Z)/sin(X→C
+Disp "","Z°="+eval(Z),"B="+eval(B),"C="+eval(C
+Return
+
+Lbl 72
+Input "X°=",X
+Input "Y°=",Y
+Input "C=",C
+
+180-X-Y→Z
+Csin(X)/sin(Z→A
+Csin(Y)/sin(Z→B
+Disp "","Z°="+eval(Z),"A="+eval(A),"B="+eval(B
+Return
+
+Lbl 73
+Input "X°=",X
+Input "A=",A
+Input "B=",B
+
+sin(Bsin(X)/A→Y
+180-X-Y→Z
+180-Y→θ
+Asin(Z)/sin(X→C
+
+If θ+X≥180:Then
+Disp "","Y°="+eval(Y)+"  Y°≠"+eval(θ),"Z°="+eval(Z),"C="+eval(C
+Else
+Asin(180-θ-X)/sin(X→D
+Disp "","Y°="+eval(Y)+"  Y°="+eval(θ),"Z°="+eval(Z)+"  Z°="+eval(180-θ-X),"C="+eval(C)+"   C="+eval(D
+End:Return
+
+Lbl 74
+Input "X°=",X
+Input "B=",B
+Input "C=",C
+
+√(B²+C²-2BCcos(X→A
+sin(Bsin(X)/A→Y
+180-X-Y→Z
+Disp "","Y°="+eval(Y),"Z°="+eval(Z),"A="+eval(A
+Return
+
+Lbl 75
+Input "A=",A
+Input "B=",B
+Input "C=",C
+
+cos((A²-B²-C²)/(­2BC)→X
+sin(Bsin(X)/A→Y
+180-X-Y→Z
+Disp "","X°="+eval(X),"Y°="+eval(Y),"Z°="+eval(Z
+Return
+
+Lbl 76
+Input "X°=",X
+Input "Y°=",Y
+Input "Z°=",Z
+
+Repeat 5=9
+Disp "ARE YOU DUMB?":End
+
+
+Lbl V
