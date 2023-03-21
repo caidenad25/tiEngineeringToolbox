@@ -1,0 +1,227 @@
+ClrHome:AxesOff:ClrDraw
+FnOff :1→G:2→H
+{1,0,√(3)/2,.5,√(2)/2,√(2)/2,.5,√(3)/2,0,1,­.5,√(3)/2,­√(2)/2,√(2)/2,­√(3)/2,.5,­1,0,­√(3)/2,­.5,­√(2)/2,­√(2)/2,­.5,­√(3)/2,0,­1,.5,­√(3)/2,√(2)/2,­√(2)/2,√(3)/2,­.5→L₅
+
+ZSquare
+­7.2→C:8→R
+Circle(C,0,R
+Circle(C,0,R+0.13
+
+For(I,1,16
+Line(C,0,C+RL₅(2I-1),RL₅(2I),GREEN:End
+
+TextColor(MAGENTA
+Text(60,162,"sin(X)
+Text(75,162,"cos(X)
+Text(90,162,"tan(X)
+
+TextColor(RED
+Line(2,10,2,­10,BLACK
+Line(2,­4,16,­4,BLACK
+Line(2,4,16,4,BLACK
+Text(­1,122,156,"D=
+Text(­1,142,156,"R=
+
+TextColor(LTBLUE
+Text(­1,13,152,"(
+Text(­1,13,202,",
+Text(­1,13,252,")
+Line(4,7.5,8,7.5,LTBLUE
+Line(10,7.5,14,7.5,LTBLUE
+
+Goto S
+Lbl 1
+
+Repeat K≠0
+getKey→K
+End
+
+If K=45:Then
+ClrDraw:AxesOn 
+Disp "
+Return
+End
+
+G→H
+If K=24:Then
+If G>1 and G<9:Then
+G+1→G
+Else
+If G>9
+G-1→G
+End:End
+If K=26:Then
+If G<9 and G>1:Then
+G-1→G
+Else
+If G>9
+G+1→G
+End
+End
+If K=25:Then
+If G>13 or (G≥1 and G<5):Then
+G+1→G
+Else
+If G>5 and G<13
+G-1→G
+End:End
+If K=34:Then
+If G>5 and G<13:Then
+G+1→G
+Else
+If G>13 or (G≥1 and G<5)
+G-1→G
+End:End
+If G>16:1→G
+If G<1:16→G
+
+Lbl S
+If G≠H:Then
+
+If G=1:Then
+"360°→Str3:"2π→Str4
+{0,1,0→L₄
+"1→Str1:"0→Str2
+End
+If G=2:Then
+"30°→Str3:"π/6→Str4
+{6,6,6→L₄
+"√(3)→Str1:"2→Str2
+End
+If G=3:Then
+"45°→Str3:"π/4→Str4
+{6,6,6→L₄
+"√(2)→Str1:"√(2)→Str2
+End
+If G=4:Then
+"60°→Str3:"π/3→Str4
+{6,6,6→L₄
+"2→Str1:"√(3)→Str2
+End
+If G=5:Then
+"90°→Str3:"π/2→Str4
+{1,0,4→L₄
+"0→Str1:"1→Str2
+End
+If G=6:Then
+"120°→Str3:"2π/3→Str4
+{6,5,5→L₄
+"­2→Str1:"√(3)→Str2
+End
+If G=7:Then
+"135°→Str3:"3π/4→Str4
+{6,5,5→L₄
+"­√(2)→Str1:"√(2)→Str2
+End
+If G=8:Then
+"150°→Str3:"5π/6→Str4
+{6,5,5→L₄
+"­√(3)→Str1:"2→Str2
+End
+If G=9:Then
+"180°→Str3:"π→Str4
+{0,­1,0→L₄
+"­1→Str1:"0→Str2
+End
+If G=10:Then
+"210°→Str3:"7π/6→Str4
+{5,5,6→L₄
+"­√(3)→Str1:"­2→Str2
+End
+If G=11:Then
+"225°→Str3:"5π/4→Str4
+{5,5,6→L₄
+"­√(2)→Str1:"­√(2)→Str2
+End
+If G=12:Then
+"240°→Str3:"4π/3→Str4
+{5,5,6→L₄
+"­2→Str1:"­√(3)→Str2
+End
+If G=13:Then
+"270°→Str3:"3π/2→Str4
+{­1,0,4→L₄
+"0→Str1:"­1→Str2
+End
+If G=14:Then
+"300°→Str3:"5π/3→Str4
+{5,6,5→L₄
+"2→Str1:"­√(3)→Str2
+End
+If G=15:Then
+"315°→Str3:"7π/4→Str4
+{5,6,5→L₄
+"√(2)→Str1:"­√(2)→Str2
+End
+If G=16:Then
+"330°→Str3:"11π/6→Str4
+{5,6,5→L₄
+"√(3)→Str1:"­2→Str2
+End
+
+Line(C,0,C+RL₅(2G-1),RL₅(2G),RED
+Line(C,0,C+RL₅(2H-1),RL₅(2H),GREEN
+
+Text(­1,122,182,"    
+Text(­1,142,182,"     
+TextColor(RED
+Text(­1,122,182,Str3
+Text(­1,142,182,Str4
+
+
+Text(60,215,"           "
+Text(75,215,"           
+Text(90,215,"                
+TextColor(ORANGE
+For(I,1,3
+If L₄(I)=6:Then
+Text(­1,45+15I,220,"+
+Else
+If L₄(I)=5:Then
+Text(­1,45+15I,220,"-
+Else
+If L₄(I)=4:Then
+Text(45+15I,215,"=DNE
+Else
+Text(45+15I,215,"="+eval(L₄(I)
+End:End:End
+End
+
+TextColor(LTBLUE
+Text(5,165,"                          "
+Text(21,180,"2
+If length(Str1)>2:Then
+Text(5,165,Str1
+Else
+If Str1="0"
+Text(21,180,"0
+If Str1="1" or Str1="­1"
+Text(21,180,"1
+If Str1="2" or Str1="­2
+eval(expr(Str1)/2→Str1
+If length(Str1)=1
+Text(5,180,Str1
+If length(Str1)=2
+Text(5,175,Str1
+End
+
+Text(5,215,"                   "
+Text(21,230,"2
+If length(Str2)>2:Then
+Text(5,215,Str2
+Else
+If Str2="0"
+Text(21,230,"0
+If Str2="1" or Str2="­1"
+Text(21,230,"1
+If Str2="2" or Str2="­2"
+eval(expr(Str2)/2→Str2
+If length(Str2)=1
+Text(5,230,Str2
+If length(Str2)=2
+Text(5,225,Str2
+End
+
+
+End:Goto 1
+Lbl 2
