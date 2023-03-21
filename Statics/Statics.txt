@@ -1,6 +1,6 @@
-Menu("      CALCULATIONS      ","DOT PRODUCT",1,"CROSS PRODUCT",2,"EXIT",3
+Menu("      CALCULATIONS      ","DOT PRODUCT",1,"CROSS PRODUCT",2,"C.MATRIX (2 EQS)",3,"EXIT",4
 
-Lbl 3
+Lbl 4
 Stop
 
 Lbl 1
@@ -9,7 +9,7 @@ Disp "Enter {A,B,C}•{D,E,F}
 Input "V₁=",L₁
 Input "V₂=",L₂
 sum(L₁*L₂)→V
-Disp "","DP = "+toString(V
+Disp "","DP = "+toString(round(V,2))
 Return
 
 Lbl 2
@@ -21,4 +21,19 @@ L₁(2)*L₂(3)-L₁(3)*L₂(2)→A
 L₁(3)*L₂(1)-L₁(1)*L₂(3)→B
 L₁(1)*L₂(2)-L₁(2)*L₂(1)→C
 {A,B,C→L₃
-Disp "","CP = "+toString(L₃
+Disp "","CP = "+toString(round(L₃,2))
+Return
+
+Lbl 3
+ClrHome
+Disp "Enter Coeff EQs as Lists
+Input "EQ1: ",L₁
+Input "EQ2: ",L₂
+Listmatr(L₁,L₂,[A]
+[A]→[A]
+rref([A])→[A]
+dim([A])→L₁
+L₁(2)→N
+Matrlist([A],N,L₁
+Disp "","Soln = "+toString(round(L₁,2))
+Return
