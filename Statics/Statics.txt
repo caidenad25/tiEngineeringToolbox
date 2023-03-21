@@ -1,4 +1,4 @@
-Menu("       CALCULATIONS       ","DOT PRODUCT",1,"CROSS PRODUCT",2,"COEFF. MATRIX",3,"FORCE VECTOR (3D)",4,"RESULTANTS (3D)",5,"EXIT",X
+Menu("       CALCULATIONS       ","DOT PRODUCT",1,"CROSS PRODUCT",2,"COEFF. MATRIX",3,"FORCE VECTOR (3D)",4,"RESULTANTS (3D)",5,"SUM OF SQUARES",6,"AXIS ANGLES",7,"EXIT",X
 
 Lbl X
 ClrHome
@@ -94,10 +94,10 @@ End
 
 Lbl 4
 ClrHome
-Disp "Magnitude F and n={a,b,c}"
+Disp "Magnitude F and n={a,b,c}
 Input "|F|=",F
 Input "n=",L₄
-L₄*(F/√(L₄(1)²+L₄(2)²+L₄(3)²))→L₄
+L₄*(F/√(sum(L₄²))→L₄
 DelVar F
 Disp "","Fv(L₄): "+toString(round(L₄,2)
 Pause L₄
@@ -105,13 +105,32 @@ Goto X
 
 Lbl 5
 ClrHome
-Disp "R={(a)i,(b+c)j,(d+e+f)k}"
+Disp "R={(a)i,(b+c)j,(d+e+f)k}
 Input "R=",⌊R
-√(⌊R(1)²+⌊R(2)²+⌊R(3)²)→R
-{cos(⌊R(1)/R),cos(⌊R(2)/R),cos(⌊R(3)/R)}→⌊ANG
+√(sum(⌊R²))→R
+cos(⌊R/R)→⌊θ
 Disp "","Res(⌊R): "+toString(round(⌊R,2)
 Pause ⌊R
 Disp "|R|: "+toString(round(R,2)
-Disp "{θx,θy,θz}: "+toString(round(⌊ANG,0)
-Pause ⌊ANG
+Disp "{θx,θy,θz}: "+toString(round(⌊θ,0)
+Pause ⌊θ
+Goto X
+
+Lbl 6
+ClrHome
+Disp "Enter items as {A,B,C,etc}
+Input "Items=",⌊I
+√(sum(⌊I²))→S
+Disp "","SS(S): "+toString(round(S,2)
+Pause S
+Goto X
+
+Lbl 7
+ClrHome
+Disp "Enter force vector <i,j,k>
+Input "F=",⌊F
+√(sum(⌊F²))→S
+cos(⌊F/S)→⌊θ
+Disp "","{θx,θy,θz}: "+toString(round(⌊θ,0)
+Pause ⌊θ
 Goto X
