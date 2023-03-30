@@ -1,2 +1,6 @@
 # TI-Basic-For-Engineering
-Welcome to TI-BASIC for Engineering! I will be uploading TI-84 Plus CE compatible programs written in TI-Basic. These are intended for use by fellow engineering students or really anyone interested in the content. Obviously, I am not responsible for violations such as using these when not permitted for exams, etc. Currently, the programs included are a well-rounded Statics program and an early Principles of Economics program. This readme will be updated later with more info as well as when new programs come out. Usage of the programs is self explanatory. I will also include instructions for installation.
+Welcome to TI-BASIC for Engineering! 
+
+Updates to the readme are coming VERY soon!
+
+[View the Trello board](https://trello.com/b/A7M2hqHN)
