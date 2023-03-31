@@ -3,10 +3,10 @@ A repository of TI Basic programs for STEM applications.
 
 ## Table of Contents
 - [Installation](https://github.com/caidenad25/TI-Basic-For-Engineering#installation)
-- [Usage](https://github.com/caidenad25/TI-Basic-For-Engineering#usage)
-- [Programs](https://github.com/caidenad25/TI-Basic-For-Engineering#programs)
-- [Contributors](https://github.com/caidenad25/TI-Basic-For-Engineering#contributors)
-- [Trello](https://trello.com/b/A7M2hqHN)
+- [Usage](https://github.com/caidenad25/TI-Basic-For-Engineering#installation)
+- [Programs](https://github.com/caidenad25/TI-Basic-For-Engineering#installation)
+- [Contributors](https://github.com/caidenad25/TI-Basic-For-Engineering#installation)
+- [Trello](https://github.com/caidenad25/TI-Basic-For-Engineering#installation)
 
 ### Installation
 To install the programs in this repository, follow these steps:
@@ -41,5 +41,6 @@ The programs included are self-explanatory as to what they are capable of calcul
 ### Trello
 Go to the [Board](https://trello.com/b/A7M2hqHN) or scan the [QR code](https://user-images.githubusercontent.com/128340381/229000146-6814e9ba-dead-4c24-9bc8-097cac913492.png) to stay up to date with progress.
 
-# Contributors
-[Branden](https://github.com/BrandenEK) - Game Programmer
+### Contributors
+- **Caiden** (me) - Civil Engineer
+- [**Branden**](https://github.com/BrandenEK) - Game Programmer
