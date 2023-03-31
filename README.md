@@ -1,4 +1,8 @@
 # TI Basic For Engineering
+![Release version](https://img.shields.io/github/v/release/caidenad25/TI-Basic-For-Engineering)
+![Last commit](https://img.shields.io/github/last-commit/caidenad25/TI-Basic-For-Engineering?color=important)
+![Downloads](https://img.shields.io/github/downloads/caidenad25/TI-Basic-For-Engineering/total?color=success)
+
 A repository of TI Basic programs for STEM applications.
 
 ## Table of Contents
