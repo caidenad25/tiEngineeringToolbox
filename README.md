@@ -2,10 +2,10 @@
 A repository of TI Basic programs for STEM applications.
 
 ## Table of Contents
-- [Installation](https://github.com/caidenad25/TI-Basic-For-Engineering/edit/main/README.md#installation)
-- [Usage](https://github.com/caidenad25/TI-Basic-For-Engineering/edit/main/README.md#usage)
-- [Programs](https://github.com/caidenad25/TI-Basic-For-Engineering/edit/main/README.md#programs)
-- [Contributors](https://github.com/caidenad25/TI-Basic-For-Engineering/edit/main/README.md#contributors)
+- [Installation](https://github.com/caidenad25/TI-Basic-For-Engineering#installation)
+- [Usage](https://github.com/caidenad25/TI-Basic-For-Engineering#usage)
+- [Programs](https://github.com/caidenad25/TI-Basic-For-Engineering#programs)
+- [Contributors](https://github.com/caidenad25/TI-Basic-For-Engineering#contributors)
 - [Trello](https://trello.com/b/A7M2hqHN)
 
 ### Installation
