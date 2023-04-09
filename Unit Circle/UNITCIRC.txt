@@ -1,7 +1,17 @@
+10→dim(⌊VRSN
+If ⌊VRSN(5)≠1.0:Then
+ClrHome
+Output(4,6,"UNIT CIRCLE v1.0
+Output(6,9,"BY BRANDEN
+Pause ""
+1.0→⌊VRSN(5)
+End
+
 ClrHome:AxesOff:ClrDraw
 FnOff :1→G:2→H
 {1,0,√(3)/2,.5,√(2)/2,√(2)/2,.5,√(3)/2,0,1,­.5,√(3)/2,­√(2)/2,√(2)/2,­√(3)/2,.5,­1,0,­√(3)/2,­.5,­√(2)/2,­√(2)/2,­.5,­√(3)/2,0,­1,.5,­√(3)/2,√(2)/2,­√(2)/2,√(3)/2,­.5→L₅
 
+ZStandard
 ZSquare
 ­7.2→C:8→R
 Circle(C,0,R
