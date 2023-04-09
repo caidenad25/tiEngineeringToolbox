@@ -1,0 +1,603 @@
+10→dim(⌊VRSN
+If ⌊VRSN(3)≠1.3:Then
+ClrHome
+Output(4,5,"Physics Solver 1.3
+Output(6,9,"By Branden
+Pause 
+1.3→⌊VRSN(3)
+End
+
+Lbl N:ClrHome
+Menu("         PHYSICS          ","Kinematics Formulas    *",1,"Work Formulas          *",2,"Gravitation Formulas   *",4,"Rotation Formulas      *",5,"Exit",V
+Lbl V:Return
+
+Lbl 1
+ClrHome:0→X:0→A:0→T:0→V:0→I:0→J:0→Y
+Menu("   1D and 2D Kinematics   ","Velocity (Time)",11,"Displacement (Time)",12,"Velocity (Displacement)",13,"Back",N
+
+Lbl 11
+Disp "ENTER ­1 FOR UNKNOWN","V=V°+AT",""
+Input "V=",V
+Input "V°=",I
+Input "A=",A
+Input "T=",T
+
+If V=­1:Then
+I+AT→Y
+Disp "","V= "+toString(Y)+" M/S":End
+If I=­1:Then
+V-(AT)→Y
+Disp "","V°= "+toString(Y)+" M/S":End
+If A=­1:Then
+(V-I)/T→Y
+Disp "","A= "+toString(Y)+" M/S²":End
+If T=­1:Then
+(V-I)/A→Y
+Disp "","T= "+toString(Y)+" S":End
+Return
+
+Lbl 12
+Disp "ENTER ­1 FOR UNKNOWN","X-X°=V°T+(AT²)/2",""
+Input "X=",X
+Input "X°=",I
+Input "V°=",V
+Input "T=",T
+Input "A=",A
+
+If X=­1:Then
+VT+I+(AT²)/2→Y
+Disp "","X= "+toString(Y)+" M":End
+If I=­1:Then
+­1(VT+(AT²)/2-X→Y
+Disp "","X°= "+toString(Y)+" M":End
+If V=­1:Then
+(X-I-(AT²/2))/T→Y
+Disp "","V°= "+toString(Y)+" M/S":End
+
+If T=­1:Then
+If V=0:Then
+√(2(X-I)/A→Y
+Disp "","T= "+toString(Y)+" S"
+Else
+If A=0:Then
+(X-I)/V→Y
+Disp "","T= "+toString(Y)+" S"
+Else
+If X-I=0:Then
+­2V/A→Y
+Disp "","T= 0 S","T= "+toString(Y)+" S"
+Else
+Disp "","I CANT CALCULATE THAT ):
+End:End:End:End
+
+If A=­1:Then
+X-I-(VT)→Y
+2*Y/T²→Y
+Disp "","A= "+toString(Y)+" M/S²":End
+Return
+
+Lbl 13
+Disp "ENTER ­1 FOR UNKNOWN","V²=V°²+2A(X-X°)",""
+Input "V=",V
+Input "V°=",I
+Input "A=",A
+Input "X=",X
+Input "X°=",J
+
+If V=­1:Then
+√(I²+2A(X-J→Y
+Disp "","V= "+toString(Y)+" M/S":End
+If I=­1:Then
+2A(X-J→Y
+√(V²-Y→Y
+Disp "","V°= "+toString(Y)+" M/S":End
+If A=­1:Then
+(V²-I²)/(2*(X-J→Y
+Disp "","A= "+toString(Y)+" M/S²":End
+If X=­1:Then
+(V²-I²)/(2A→Y
+Y+J→Y
+Disp "","X= "+toString(Y)+" M":End
+If J=­1:Then
+(V²-I²)/(2A→Y
+X-Y→Y
+Disp "","X°= "+toString(Y)+" M":End
+Return
+
+
+
+
+Lbl 2
+ClrHome:Degree:0→W:0→F:0→θ:0→D:0→K:0→M:0→V:0→U:0→X:0→Y
+Menu(" WORK AND ENERGY FORMULAS ","WORK (FORCE)",21,"WORK (SPRING)",22,"FORCE (SPRING)",23,"KINETIC ENERGY",24,"POTENTIAL ENERGY",25,"POTENTIAL E. (SPRING)",26,"POWER (FORCE*SPEED)",27,"POWER (WORK/TIME)",28,"BACK",N
+
+Lbl 21
+Disp "ENTER ­1 FOR UNKNOWN","W=Fcos(θ)D",""
+Input "W=",W
+Input "F=",F
+Input "θ=",θ
+Input "D=",D
+
+If W=­1:Then
+DFcos(θ→Y
+Disp "","W= "+toString(Y)+" J":End
+If F=­1:Then
+W/D/cos(θ→Y
+Disp "","F= "+toString(Y)+" N":End
+If θ=­1:Then
+cos(W/F/D→Y
+Disp "","θ= "+toString(Y)+"°":End
+If D=­1:Then
+W/F/cos(θ→Y
+Disp "","D= "+toString(Y)+" M":End
+Return
+
+
+Lbl 22
+Disp "ENTER ­1 FOR UNKNOWN","W=1/2(KX²)",""
+Input "W=",W
+Input "K=",K
+Input "X=",X
+
+If W=­1:Then
+.5KX²→Y
+Disp "","W= "+toString(Y)+" J":End
+If K=­1:Then
+2W/X²→Y
+Disp "","K= "+toString(Y)+" N/M":End
+If X=­1:Then
+√(2W/K→Y
+Disp "","X= "+toString(Y)+" M":End
+Return
+
+
+Lbl 23
+Disp "ENTER ­1 FOR UNKNOWN","F=­KX",""
+Input "F=",F
+Input "K=",K
+Input "X=",X
+
+If F=­1:Then
+KX→Y
+Disp "","F= "+toString(Y)+" N":End
+If K=­1:Then
+F/X→Y
+Disp "","K= "+toString(Y)+" N/M":End
+If X=­1:Then
+F/K→Y
+Disp "","X= "+toString(Y)+" M":End
+Return
+
+
+Lbl 24
+Disp "ENTER ­1 FOR UNKNOWN","K=1/2(MV²)",""
+Input "K=",K
+Input "M=",M
+Input "V=",V
+
+If K=­1:Then
+.5MV²→Y
+Disp "","K= "+toString(Y)+" J":End
+If M=­1:Then
+2K/V²→Y
+Disp "","M= "+toString(Y)+" KG":End
+If V=­1:Then
+√(2K/M→Y
+Disp "","V= "+toString(Y)+" M/S":End
+Return
+
+
+Lbl 25
+Disp "ENTER ­1 FOR UNKNOWN","U=MH(9.8)",""
+Input "U=",U
+Input "M=",M
+Input "H=",D
+
+If U=­1:Then
+9.8MD→Y
+Disp "","U= "+toString(Y)+" J":End
+If M=­1:Then
+U/9.8/D→Y
+Disp "","M= "+toString(Y)+" KG":End
+If D=­1:Then
+U/9.8/M→Y
+Disp "","H= "+toString(Y)+" M":End
+Return
+
+
+Lbl 26
+Disp "ENTER ­1 FOR UNKNOWN","U=1/2(KX²)",""
+Input "U=",U
+Input "K=",K
+Input "X=",X
+
+If U=­1:Then
+.5KX²→Y
+Disp "","U= "+toString(Y)+" J":End
+If K=­1:Then
+2U/X²→Y
+Disp "","K= "+toString(Y)+" N/M":End
+If X=­1:Then
+√(2U/K→Y
+Disp "","X= "+toString(Y)+" M":End
+Return
+
+
+Lbl 27
+Disp "ENTER ­1 FOR UNKNOWN","P=FV",""
+Input "P=",X
+Input "F=",F
+Input "V=",V
+
+If X=­1:Then
+FV→Y
+Disp "","P= "+toString(Y)+" W":End
+If F=­1:Then
+P/V→Y
+Disp "","F= "+toString(Y)+" N":End
+If V=­1:Then
+P/F→Y
+Disp "","V= "+toString(Y)+" M/S":End
+Return
+
+
+Lbl 28
+Disp "ENTER ­1 FOR UNKNOWN","P=W/T",""
+Input "P=",X
+Input "W=",W
+Input "T=",D
+
+If X=­1:Then
+W/D→Y
+Disp "","P= "+toString(Y)+" W":End
+If W=­1:Then
+XD→Y
+Disp "","W= "+toString(Y)+" J":End
+If D=­1:Then
+W/X→Y
+Disp "","T= "+toString(Y)+" S":End
+Return
+
+
+
+Lbl 4
+ClrHome:"ARVWFMNHUT
+6.6743­11→G
+
+Menu("Circular Motion & Gravity ","Centrip. Acceleration",41,"Gravitational Force",43,"Gravitational Field",44,"Potential E. (Gravity)",45,"Kepler's Rule",46,"Orbital Velocity",47,"Escape Velocity",48,"Constants",49,"Back",N
+
+Lbl 49
+Output(1,9,"CONSTANTS
+Output(3,7,"G = 6.6743­11
+Output(5,3,"Mass (E) = 5.97224 kg
+Output(6,3,"Radius (E) = 6378000 m
+Output(8,3,"Mass (S) = 1.98930 kg
+Output(9,3,"Radius (S) = 56378150 m
+Pause "
+Goto 4
+
+Lbl 41
+Disp "Enter -1 for unknown(s)","a = v²/r = rw²",""
+Input "a=",A
+Input "r=",R
+Input "v=",V
+Input "w=",W
+Disp "
+
+If 5=6:Then
+
+If A=­1:Then
+If V=­1 and W≠­1:Then
+RW²→Y:RW→X
+Disp "v= "+toString(X)+" m/s":End
+If W=­1 and V≠­1:Then
+V²/R→Y:V/R→X
+Disp "w= "+toString(X)+" rad/s":End
+Disp "a= "+toString(Y)+" m/s²":End
+
+If R=­1:Then
+If A=­1:Then
+Disp "No, don't try that.":Return:End
+If V=­1 and W≠­1:A/W²→Y
+If W=­1 and V≠­1:V²/A→Y
+Disp "r= "+toString(Y)+" m":End
+
+"Unfinished
+End
+Return
+
+
+Lbl 43
+Disp "Enter -1 for unknown","F=G(m₁m₂)/r²",""
+Input "F=",F
+Input "m₁=",M
+Input "m₂=",N
+Input "r=",R
+Disp "
+
+If F=­1:Then
+GMN/R^2→Y
+Disp "F= "+toString(Y)+" N":End
+If M=­1:Then
+FR^2/(GN→Y
+Disp "m₁= "+toString(Y)+" kg":End
+If N=­1:Then
+FR^2/(GM→Y
+Disp "m₂= "+toString(Y)+" kg":End
+If R=­1:Then
+√(GMN/F→Y
+Disp "r= "+toString(Y)+" m":End
+Return
+
+
+Lbl 44
+Disp "Enter -1 for unknown","g=G(m/r²)",""
+Input "g=",H
+Input "m=",M
+Input "r=",R
+Disp "
+
+If H=­1:Then
+GM/R^2→Y
+Disp "g= "+toString(Y)+" m/s²":End
+If M=­1:Then
+HR^2/G→Y
+Disp "m= "+toString(Y)+" kg":End
+If R=­1:Then
+√(GM/H→Y
+Disp "r= "+toString(Y)+" m":End
+Return
+
+
+Lbl 45
+Disp "Enter -1 for unknown","U=­G(m₁m₂)/r",""
+Input "U=",U
+Input "m₁=",M
+Input "m₂=",N
+Input "r=",R
+Disp "
+
+If U=­1:Then
+­GMN/R→Y
+Disp "U= "+toString(Y)+" J":End
+If M=­1:Then
+UR/(­GN→Y
+Disp "m₁= "+toString(Y)+" kg":End
+If N=­1:Then
+UR/(­GM→Y
+Disp "m₂= "+toString(Y)+" kg":End
+If R=­1:Then
+­GMN/U→Y
+Disp "r= "+toString(Y)+" m":End
+Return
+
+
+Lbl 46
+Disp "Enter -1 for unknown","T²=(4π²/GM)r",""
+Input "T=",T
+Input "M=",M
+Input "r=",R
+Disp "
+4π^2→F
+
+If T=­1:Then
+√(FR^3/(GM→Y
+Disp "T= "+toString(Y)+" s":End
+If M=­1:Then
+FR^3/(GT^2→Y
+Disp "M= "+toString(Y)+" kg":End
+If R=­1:Then
+√(GMT^2/F→Y
+Disp "r= "+toString(Y)+" m":End
+Return
+
+
+Lbl 47
+Disp "Enter -1 for unknown","v=√(GM/r)",""
+Input "v=",V
+Input "M=",M
+Input "r=",R
+Disp "
+
+If V=­1:Then
+√(GM/R→Y
+Disp "v= "+toString(Y)+" m/s":End
+If M=­1:Then
+RV^2/G→Y
+Disp "M= "+toString(Y)+" kg":End
+If R=­1:Then
+GM/V^2→Y
+Disp "r= "+toString(Y)+" m":End
+Return
+
+
+Lbl 48
+Disp "Enter -1 for unknown","v↑=√(2GM/r)",""
+Input "v↑=",V
+Input "M=",M
+Input "r=",R
+Disp "
+
+If V=­1:Then
+√(2GM/R→Y
+Disp "v↑= "+toString(Y)+" m/s":End
+If M=­1:Then
+RV^2/(2G→Y
+Disp "M= "+toString(Y)+" kg":End
+If R=­1:Then
+2GM/V^2→Y
+Disp "r= "+toString(Y)+" m":End
+Return
+
+
+
+Lbl 5
+ClrHome:Radian:"RFTθAIWKPL
+
+Menu("   Rotational Dynamics    ","Torque (Force)",51,"Torque (Inertia)",52,"Ang. Kinetic Energy",53,"Angular Work",54,"Angular Power",55,"Angular Momentum",56,"Torque-Impulse",57,"MOI Shapes",59,"Back",N
+
+
+Lbl 51
+Disp "Enter -1 for unknown","τ=rFsin(φ)",""
+Input "τ=",T
+Input "r=",R
+Input "F=",F
+Input "φ=",θ
+Disp "
+
+If T=­1:Then
+RFsin(θ→Y
+Disp "τ= "+toString(Y)+" m*N":End
+If R=­1:Then
+T/(Fsin(θ→Y
+Disp "r= "+toString(Y)+" m":End
+If F=­1:Then
+T/(Rsin(θ→Y
+Disp "F= "+toString(Y)+" N":End
+If θ=­1:Then
+sin(T/(RF→Y
+Disp "φ= "+toString(Y)+" rad":End
+Return
+
+
+Lbl 52
+Disp "Enter -1 for unknown","τ=Iα",""
+Input "τ=",T
+Input "I=",I
+Input "α=",A
+Disp "
+
+If T=­1:Then
+IA→Y
+Disp "τ= "+toString(Y)+" m*N":End
+If I=­1:Then
+T/A→Y
+Disp "I= "+toString(Y)+" Kg*m²":End
+If A=­1:Then
+T/I→Y
+Disp "α= "+toString(Y)+" rad/s²":End
+Return
+
+
+Lbl 53
+Disp "Enter -1 for unknown","K=(1/2)Iw²",""
+Input "K=",K
+Input "I=",I
+Input "w=",W
+Disp "
+
+If K=­1:Then
+.5IW^2→Y
+Disp "K= "+toString(Y)+" J":End
+If I=­1:Then
+2K/W^2→Y
+Disp "I= "+toString(Y)+" kg*m²":End
+If W=­1:Then
+√(2K/I→Y
+Disp "w= "+toString(Y)+" rad/s":End
+Return
+
+
+Lbl 54
+Disp "Enter -1 for unknown","W=τθ",""
+Input "W=",W
+Input "τ=",T
+Input "θ=",θ
+Disp "
+
+If W=­1:Then
+Tθ→Y
+Disp "W= "+toString(Y)+" J":End
+If T=­1:Then
+W/θ→Y
+Disp "τ= "+toString(Y)+" m*N":End
+If θ=­1:Then
+W/T→Y
+Disp "θ= "+toString(Y)+" rad":End
+Return
+
+
+Lbl 55
+Disp "Enter -1 for unknown","P=τw",""
+Input "P=",P
+Input "τ=",T
+Input "w=",W
+Disp "
+
+If P=­1:Then
+TW→Y
+Disp "P= "+toString(Y)+" W":End
+If T=­1:Then
+P/W→Y
+Disp "τ= "+toString(Y)+" m*N":End
+If W=­1:Then
+P/T→Y
+Disp "w= "+toString(Y)+" rad/s":End
+Return
+
+
+Lbl 56
+Disp "Enter -1 for unknown","L=Iw",""
+Input "L=",L
+Input "I=",I
+Input "w=",W
+Disp "
+
+If L=­1:Then
+IW→Y
+Disp "L= "+toString(Y)+" kg*m²/s":End
+If I=­1:Then
+L/W→Y
+Disp "I= "+toString(Y)+" kg*m²":End
+If W=­1:Then
+L/I→Y
+Disp "w= "+toString(Y)+" rad/s":End
+Return
+
+
+Lbl 57
+Disp "Enter -1 for unknown","τ(t)=L",""
+Input "τ=",T
+Input "t=",R
+Input "L=",L
+Disp "
+
+If T=­1:Then
+L/R→Y
+Disp "τ= "+toString(Y)+" m*N":End
+If R=­1:Then
+L/T→Y
+Disp "t= "+toString(Y)+" s":End
+If L=­1:Then
+TR→Y
+Disp "L= "+toString(Y)+" kg*m²/s":End
+Return
+
+
+Lbl 59
+Output(1,5,"Moments of Inertia
+Output(3,1,"Thin Hoop: MR²
+Output(5,1,"Solid Disk: (1/2)MR²
+Output(7,1,"Solid Sphere: (2/5)MR²
+Output(9,1,"Hollow Sphere: (2/3)MR²
+Pause "
+ClrHome
+
+Output(1,5,"Moments of Inertia
+Output(3,1,"Particle: MR²
+Output(5,1,"Rod (Center): (1/12)ML²
+Output(7,1,"Rod (End): (1/3)ML²
+Output(9,1,"Annular Cylinder:
+Output(10,11,"(1/2)M(R₁²+R₂²)
+Pause "
+ClrHome
+
+Output(1,5,"Moments of Inertia
+Output(3,1,"Rect. Plate:
+Output(4,12,"(1/12)M(a²+b²)
+Output(6,1,"Rect. Sheet (Center):
+Output(7,17,"(1/12)ML²
+Output(9,1,"Rect. Sheet (End):
+Output(10,18,"(1/3)ML²
+Pause "
+Goto 5
