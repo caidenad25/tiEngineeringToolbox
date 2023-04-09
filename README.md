@@ -16,7 +16,7 @@ A repository of TI Basic programs for STEM applications.
 To install the programs in this repository, follow these steps:
 
 - Download the desired file from **Releases** (older) or **bin** (current)
-- Download and install TI-Connect CE
+- Download and install [TI-Connect CE](https://education.ti.com/en/products/computer-software/ti-connect-sw)
 - Plug your calculator into the same machine as TI-Connect CE
 - Open TI-Connect CE and navigate to the Program Editor workspace
 - Click "Open Program"
