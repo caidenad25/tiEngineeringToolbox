@@ -5,6 +5,8 @@
 
 A repository of TI Basic programs for STEM applications.
 
+All usage of TI-Basic or TI verbage refers to products created by Texas Instruments Incorporated.
+
 ## Table of Contents
 - [Installation](https://github.com/caidenad25/TI-Basic-For-Engineering#installation)
 - [Usage](https://github.com/caidenad25/TI-Basic-For-Engineering#usage)
@@ -16,9 +18,9 @@ A repository of TI Basic programs for STEM applications.
 To install the programs in this repository, follow these steps:
 
 - Download the desired file from **Releases** (older) or **bin** (current)
-- Download and install [TI-Connect CE](https://education.ti.com/en/products/computer-software/ti-connect-sw)
-- Plug your calculator into the same machine as TI-Connect CE
-- Open TI-Connect CE and navigate to the Program Editor workspace
+- Download and install [TI Connect™ Software](https://education.ti.com/en/products/computer-software/ti-connect-sw)
+- Plug your calculator into the same machine as TI Connect™ Software
+- Open TI Connect™ Software and navigate to the Program Editor workspace
 - Click "Open Program"
 - Select the program.8xp file you downloaded in step 1
 - Select the "Send" icon in the toolbar to send the program to your calculator
