@@ -1,0 +1,66 @@
+10→dim(⌊VRSN
+If ⌊VRSN(6)≠1.0:Then
+ClrHome
+Output(4,5,"Calculus Solver 1.0
+Output(6,9,"BY BRANDEN
+Pause 
+1.0→⌊VRSN(6)
+End
+
+Lbl N:ClrHome
+Menu("         CALCULUS         ","ESTIMATE LIMIT",1,"GRAPH DERIVATIVE",2,"EXIT",V
+
+Lbl 1
+ClrHome
+Prompt Y₁,N
+8→dim(L₆
+Y₁(N-.1→L₆(1
+Y₁(N-.01→L₆(2
+Y₁(N-.001→L₆(3
+Y₁(N-.0001→L₆(4
+Y₁(N+.0001→L₆(8
+Y₁(N+.001→L₆(7
+Y₁(N+.01→L₆(6
+Y₁(N+.1→L₆(5
+
+ClrHome
+EquString(Y₁,Str1:"EQU: Y="+Str1→Str1
+Output(1,2,Str1
+
+Output(4,3,"X -> "+toString(N)+"­
+For(I,1,4
+Output(I+5,2,"Y="+toString(round(L₆(I),5
+End
+Output(4,16,"X -> "+toString(N)+"⁺
+For(I,5,8
+Output(I+1,15,"Y="+toString(round(L₆(I),5
+End
+Pause ""
+ClrHome
+Goto V
+
+Lbl 2
+ClrHome:10→R:2→P
+Prompt Y₁
+2PR+1→dim(L₅
+2PR+1→dim(L₆
+
+For(I,1,dim(L₅
+I/P-R-(1/P→L₅(I
+nDeriv(Y₁,X,L₅(I→L₆(I
+End
+
+Plot3(xyLine,L₅,L₆,•,MAGENTA
+PlotsOn 3
+ZStandard
+Text(149,110,"PRESS 'ENTER' TO LEAVE
+
+Pause 
+PlotsOff 3
+ClrHome
+Return
+
+
+
+
+Lbl V
