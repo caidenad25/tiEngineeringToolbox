@@ -47,4 +47,6 @@ Go to the [Board](https://trello.com/b/A7M2hqHN) or scan the [QR code](https://u
 
 ### Contributors
 - **Caiden** (me) - Civil Engineer
+  - Created Statics, Econ, Cleaner
 - [**Branden**](https://github.com/BrandenEK) - Game Programmer
+  - Created Master, Physics, Unit Circle, Convert, Calculus, and Stats
