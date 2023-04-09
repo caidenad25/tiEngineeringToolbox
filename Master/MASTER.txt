@@ -1,17 +1,17 @@
-2→dim(⌊MAST
-If ⌊MAST(1)≠2345:Then
+10→dim(⌊VRSN
+If ⌊VRSN(1)≠3.61:Then
 ClrHome
-Output(4,5,"MASTER PROGRAM 3.6
+Output(4,4,"Master Program 3.6.1
 Output(6,9,"BY BRANDEN
-Pause ""
-{2345→MAST
+Pause 
+3.61→⌊VRSN(1)
 End
 
 Lbl N:ClrHome
-Menu("          PAGE 1          ","FACTOR POLYNOMIAL",1,"SYNTHETIC DIVISION",8,"QUADRATIC FORMULA",2,"INEQUALITY SOLVER",9,"TRIANGLE SOLVER        *",13,"VECTOR MATHS           *",5,"ANGLE CONVERTER        *",11,"NEXT PAGE",P,"EXIT",V
+Menu("          PAGE 1          ","FACTOR POLYNOMIAL",1,"SYNTHETIC DIVISION",8,"QUADRATIC FORMULA",2,"INEQUALITY SOLVER",9,"TRIANGLE SOLVER        *",12,"VECTOR MATHS           *",5,"ANGLE CONVERTER        *",11,"NEXT PAGE",P,"EXIT",V
 
 Lbl P:ClrHome
-Menu("          PAGE 2          ","SLOPE EQUATION",3,"COMPLEX CONJUGATE",6,"MATT DA BEAST",U,"STANDARD FORMULAS      *",4,"GEOMETRY FORMULAS      *",7,"SERIES FORMULAS        *",10,"GARBAGE COLLECT",12,"PREVIOUS PAGE",N,"EXIT",V
+Menu("          PAGE 2          ","SLOPE EQUATION",3,"COMPLEX CONJUGATE",6,"MATT DA BEAST",U,"STANDARD FORMULAS      *",4,"GEOMETRY FORMULAS      *",7,"SERIES FORMULAS        *",10,"GARBAGE COLLECT",W,"PREVIOUS PAGE",N,"EXIT",V
 
 Lbl U
 "HI":0→G
@@ -19,7 +19,7 @@ Repeat G=1
 Disp "MATT DA BEAST"
 End
 
-Lbl 12
+Lbl W
 ClrHome
 Disp "CLEARING VARIABLES
 DelVar ADelVar BDelVar CDelVar DDelVar EDelVar FDelVar GDelVar HDelVar IDelVar JDelVar KDelVar LDelVar MDelVar NDelVar ODelVar PDelVar QDelVar RDelVar SDelVar TDelVar UDelVar VDelVar WDelVar XDelVar YDelVar ZDelVar θ
@@ -189,21 +189,6 @@ End
 
 End
 abs(E)→E
-
-If 1=5:Then
-If U≠0:Then
-{D,U,F}→L₄
-min(L₄→Q
-
-gcd(abs(D),U→G
-If G=gcd(abs(D),abs(F):Then
-D/G→D
-U/G→U
-F/G→F
-End
-End
-
-End
 
 If E=0:Then
 toString(D→Str1
@@ -878,7 +863,7 @@ ClrHome
 Goto 11
 
 
-Lbl 13:ClrHome:Degree
+Lbl 12:ClrHome:Degree
 Menu("      TRIANGLE SOLVER      ","(AAS) ANGLE-ANGLE-SIDE",71,"(ASA) ANGLE-SIDE-ANGLE",72,"(SSA) SIDE-SIDE-ANGLE",73,"(SAS) SIDE-ANGLE-SIDE",74,"(SSS) SIDE-SIDE-SIDE",75,"(AAA) ANGLE-ANGLE-ANGLE",76,"GUIDES",77,"BACK",N,"EXIT",V
 
 Lbl 77
@@ -889,7 +874,7 @@ Disp "","    A²=B²+C²-2BCcos(X)","
 Disp "    B²=A²+C²-2ACcos(Y)","
 Pause "    C²=A²+B²-2ABcos(Z)
 ClrHome
-Goto 13
+Goto 12
 
 
 Lbl 71
@@ -963,3 +948,4 @@ Disp "ARE YOU DUMB?":End
 
 
 Lbl V
+Stop
