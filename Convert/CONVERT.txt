@@ -1,0 +1,147 @@
+10→dim(⌊VRSN
+If ⌊VRSN(7)≠3.61:Then
+ClrHome
+Output(4,6,"Conversions v1.0
+Output(6,9,"By Branden
+Pause 
+3.61→⌊VRSN(7)
+End
+
+ClrHome:Lbl U:0→S
+Menu("     SELECT UNIT TYPE     ","LENGTH",91,"MASS/WEIGHT",92,"VOLUME",93,"SPEED",94,"TIME",95,"TEMPERATURE",96,"PRESSURE",97,"ENERGY",98,"EXIT",V
+Lbl V:Return
+
+Lbl 91
+"KILOMETER-METER-CENTIMETER-MILE-YARD-FOOT-INCH-KMMCMMIYDFTIN→Str2
+{1,11,17,28,33,38,43,48,50,51,53,55,57,59,61→L₆
+{1000,1,0.01,1609,0.9144,0.3048,0.0254→L₅
+Goto 90
+
+Lbl 92
+"KILOGRAM-GRAM-MILLIGRAM-US TON-POUND-OUNCE-KGGMGTONLBOZ→Str2
+{1,10,15,25,32,38,44,46,47,49,52,54,56→L₆
+{1,0.001,0.000001,907.185,0.453592,0.0283495→L₅
+Goto 90
+
+Lbl 93
+"LITER-MILLILITER-METER-CENTIMETER-GALLON-QUART-PINT-CUP-LMLMCMGQPC→Str2
+{1,7,18,25,37,44,50,55,59,60,62,64,67,68,69,70,71→L₆
+3.78541→A
+{1,0.001,1000,0.001,A,A/4,A/8,A/16→L₅
+Goto 90
+
+Lbl 94
+"METERS / SECOND-KILOMETERS / HOUR-MILES / HOUR-M/SKM/HRMI/HR→Str2
+{1,17,35,48,51,56,61→L₆
+{1,10/36,1609/3600→L₅
+Goto 90
+
+Lbl 95
+"SECOND-MINUTE-HOUR-DAY-WEEK-MONTH-YEAR-SMHRDWMY→Str2
+{1,8,15,20,24,29,35,40,41,42,44,45,46,47,48→L₆
+{1/3600,1/60,1,24,168,730,8760→L₅
+Goto 90
+
+Lbl 96:1→S
+"FAHRENHEIT-CELSIUS-KELVIN-°F°C°K→Str2
+{1,12,20,27,29,31,33→L₆
+{0,0,0→L₅
+Goto 90
+
+Lbl 97
+"ATMOSPHERE-KILOPASCAL-MM MERCURY-ATMKPAMMHG→Str2
+{1,12,23,34,37,40,44→L₆
+{1,1/101.325,1/760→L₅
+Goto 90
+
+Lbl 98
+"JOULE-CALORIE-KILOCALORIE-WATT HOUR-KILOWATT HOUR-JCALKCALWHKWH→Str2
+{1,7,15,27,37,51,52,55,59,61,64→L₆
+{1,4.184,4184,3600,3600000→L₅
+
+
+Lbl 90
+Output(1,1,"+-------CONVERTING-------+
+For(I,2,8
+Output(I,1,"I
+Output(I,26,"I
+End
+Output(9,1,"+------------------------+
+Output(5,13,"toString(
+Output(5,15,"         
+Output(10,11,"ENTER
+
+1→I:0→J:1→U:0→V:1→L:0→A
+Repeat K=45 or K=105 or K=21
+getKey→K
+
+If K=24:Then
+If L=1 and I>1:I-1→I
+If L=2 and U>1:U-1→U
+End
+If K=26:Then
+If L=1 and I<dim(L₅:I+1→I
+If L=2 and U<dim(L₅:U+1→U
+End
+
+L→A
+If K=25 and L>1:L-1→L
+If K=34 and L<3:L+1→L
+If L≠A:Then
+­1→J:­1→V
+End
+
+If I≠J or U≠V:Then
+If L≠A:Then
+If L=3:Then
+Output(10,9,"•▫ENTER▫•
+Else
+Output(10,9,"  ENTER  
+End:End
+
+For(Z,1,2
+0→A
+If Z=1:Then
+If I≠J:5→A
+I→B:3→C
+End
+If Z=2:Then
+If U≠V:5→A
+U→B:7→C
+End
+
+If A=5:Then
+sub(Str2,L₆(B),L₆(B+1)-L₆(B)-1→Str3
+Output(C,1,"I                        I"
+int((26-length(Str3))/2
+Output(C,Ans+1,Str3
+
+If Z=L:Then
+If B>1:Output(C,Ans-1,"<
+If B<dim(L₅:Output(C,Ans+2+length(Str3),">
+End:End:End:End
+I→J:U→V
+
+End
+ClrHome
+If K=45:Return
+If K=21:Goto U
+
+Lbl E
+I+dim(L₅→C
+sub(Str2,L₆(C),L₆(C+1)-L₆(C→Str3
+
+Disp "INITIAL VALUE ("+Str3+"):":Prompt X
+ClrHome
+
+If S=0:X*L₅(I)/L₅(U→A
+If S=1:Then
+If I=1:5(X-32)/9→B:If I=2:X→B:If I=3:X-273.15→B
+If U=1:9B/5+32→A:If U=2:B→A:If U=3:B+273.15→A
+End
+
+" "+toString(X)+" "+Str3+" = "+toString(round(A,6→Str1
+U+dim(L₅→C
+sub(Str2,L₆(C),L₆(C+1)-L₆(C→Str3
+Str1+" "+Str3→Str1
+Disp Str1
