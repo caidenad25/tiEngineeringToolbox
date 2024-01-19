@@ -42,13 +42,14 @@ The programs included are self-explanatory as to what they are capable of calcul
 - **Physics** - calculates kinematics and other elementary physics principles
 - **Econ** - performs elementary and specific economics calculations
 - **Stats** - assists the calculation of statistical values, specific to elementary usage
+- **Civil** - eases the conversion of decimal degrees and DMS format
 - **Cleaner** - cleans most variables (not dependencies for these) stored in RAM
 
 ### Trello
 Go to the [Board](https://trello.com/b/A7M2hqHN) or scan the [QR code](https://user-images.githubusercontent.com/128340381/229000146-6814e9ba-dead-4c24-9bc8-097cac913492.png) to stay up to date with progress.
 
 ### Contributors
-- **Caiden** (me) - Civil Engineer
-  - Created Statics, Econ, Cleaner
+- **Caiden** (me) - Civil Engineering student
+  - Created Statics, Econ, Cleaner, Civil
 - [**Branden**](https://github.com/BrandenEK) - Game Programmer
   - Created Master, Physics, Unit Circle, Convert, Calculus, and Stats
