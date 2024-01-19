@@ -1,0 +1,29 @@
+10→dim(⌊VRSN
+If ⌊VRSN(8)≠1.0:Then
+ClrHome
+Output(3,9,"CIVIL v1.0
+Output(5,9,"01/18/2024
+Output(7,10,"Caiden D
+Pause ""
+1.0→⌊VRSN(8)
+End
+
+Menu("CIVIL PROGRAMS","ANGULAR TO DMS",1,"DMS TO ANGULAR",2
+
+Lbl 1
+ClrHome
+Disp "Angle to DMS"
+Input "Angle = ",A
+Disp "DMS: "
+Disp ADMS
+Pause "Press 
+
+Lbl 2
+ClrHome
+Disp "DMS to Angle"
+Input "Degrees:",A
+Input "Minutes:",B
+Input "Seconds:",C
+ClrHome
+Disp "Angle: "+toString(round(A+B/60+C/3600,3))+"°"
+Stop
