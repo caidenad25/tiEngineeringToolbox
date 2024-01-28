@@ -45,6 +45,7 @@ The programs included are relatively self-explanatory as to what gets calculated
 - **Stats** - assists the calculation of statistical values, specific to elementary statistics
 - **Civil** - convert between decimal degrees and DMS format
 - **Cleaner** - cleans most variables from the RAM
+- **Timer** - simple timer program (limit 59:59)
 
 ### Trello
 Go to the [Board](https://trello.com/b/A7M2hqHN) or scan the [QR code](https://user-images.githubusercontent.com/128340381/229000146-6814e9ba-dead-4c24-9bc8-097cac913492.png) to stay up to date with progress. To suggest additions, leave a comment on the repository.
