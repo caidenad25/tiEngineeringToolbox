@@ -1,0 +1,41 @@
+11→dim(⌊VRSN
+If ⌊VRSN(11)≠1.0:Then
+ClrHome
+Output(3,9,"TIMER v1.0
+Output(5,9,"01/27/2024
+Output(7,10,"Caiden D
+Pause ""
+1.0→⌊VRSN(11)
+End
+
+ClrHome
+Disp "       TIMER SETUP        ","","Enter min:sec below","Limit of 59:59",""
+Wait .25
+Input "Minutes:",M
+Input "Seconds:",S
+(M*60)+S→T
+ClrHome
+
+If M>59 or S>59:Then
+ClrHome
+Disp "Invalid inputs","M,S must be <59
+Stop
+End
+
+For(I,T,0,­1)
+If I-60*int(I/60)<10:Then
+Output(5,5,toString(int(I/60),1)+":0"+toString(I-60*int(I/60),1))
+9→A
+Else
+
+If A=9:Then
+ClrHome
+0→A
+End
+
+Output(5,5,toString(int(I/60),1)+":"+toString(I-60*int(I/60),1))
+End
+Wait 1
+End
+Disp "Timer Complete","Press enter to exit"
+Pause
