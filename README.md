@@ -35,6 +35,7 @@ To use the programs, follow these steps:
 
 ### Programs
 The programs included are relatively self-explanatory as to what gets calculated by each. For obvious reasons, no 3D graphing can occur on the TI-84 Plus CE as this is not within the model's specifications.
+Note: many of the release descriptions for the first versions uploaded here have heavy markdown presence, which only renders on desktop browsers, not mobile.
 
 - **Master** - contains a variety of capabilities and elementary formulas
 - **Convert** - allows conversion of various units such as length and volume
